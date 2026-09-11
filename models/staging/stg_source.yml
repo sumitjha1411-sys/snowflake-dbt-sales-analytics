@@ -1,0 +1,10 @@
+# Creating a source, which will be a reference to the "raw" schema tables in the data warehouse (snowflake).
+
+sources:
+  - name: stg_source
+    database: dbt_tutorial  
+    schema: raw  
+    tables:
+      - name: customer
+      - name: product
+      - name: bookings
