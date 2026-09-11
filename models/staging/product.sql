@@ -1,5 +1,5 @@
 SELECT
-      booking_id AS property_id,
+      TRIM(booking_id) AS property_id,
       INITCAP(product_sub_category) AS property_type,
       INITCAP(product_category) AS property_category,
       INITCAP(product_name) AS property_subcategory,
