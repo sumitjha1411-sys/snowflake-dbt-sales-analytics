@@ -1,5 +1,7 @@
-SELECT
-    CURRENT_DATABASE() AS database_name,
-    CURRENT_SCHEMA() AS schema_name,
-    CURRENT_WAREHOUSE() AS warehouse_name,
-    CURRENT_USER() AS user_name
+-- checking connections
+
+select
+    current_database() AS database_name,
+    current_schema() AS schema_name,
+    current_warehouse() AS warehouse_name,
+    current_user() AS user_name
