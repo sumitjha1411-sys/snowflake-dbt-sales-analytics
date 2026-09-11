@@ -3,7 +3,7 @@ SELECT
     b.property_id,
     b.booking_id,
     b.property_booking_date,
-    DATE_FORMAT(b.property_booking_date,'MM-YYYY') AS booking_month_year,
+    TO_CHAR(b.property_booking_date, 'MM-YYYY') AS booking_month_year,
     b.property_selling_price as revenue,
     b.property_selling_price - p.property_cost as profit,
     b.discount,
@@ -16,7 +16,7 @@ SELECT
     c.city,
     c.country,
     c.domain,
-    c.customer_segemnt,
+    c.customer_segment,
     c.channel AS enquiry_type,
     c.age,
     CASE
