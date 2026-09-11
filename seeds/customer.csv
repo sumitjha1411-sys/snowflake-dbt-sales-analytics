@@ -1,0 +1,21 @@
+customer_id,f_name,l_name,email,city,country,customer_segment,channel,dob
+C1001,aarav,sharma,aarav.sharma@gmail.com,Mumbai,India,Premium,Online,14-03-1985
+C1002,priya,mehta,priya.mehta@yahoo.com,Delhi,India,Standard,Referral,22-07-1990
+C1003,daniel,weber,daniel.weber@outlook.com,Berlin,Germany,Luxury,Website,09-11-1982
+C1004,sofia,rossi,sofia.rossi@sify.com,Milan,Italy,Budget,Broker,18-02-1978
+C1005,rahul,kapoor,rahul.kapoor@hotmail.com,Pune,India,Standard,,30-06-1992
+C1006,emma,brown,emma.brown@gmail.com,London,UK,Premium,Referral,05-12-1987
+C1007,thomas,muller,thomas.muller@outlook.com,,Germany,Luxury,Broker,27-01-1975
+C1008,neha,patel,neha.patel@yahoo.com,,India,Budget,,16-09-1994
+C1009,james,wilson,james.wilson@gmail.com,Manchester,UK,Standard,Website,03-05-1989
+C1010,ananya,singh,ananya.singh@outlook.com,Bengaluru,India,Premium,,11-10-1986
+C1011,lucas,martin,lucas.martin@sify.com,Paris,France,Luxury,Broker,25-04-1980
+C1012,karan,malhotra,karan.malhotra@gmail.com,Gurugram,,Premium,Online,08-08-1983
+C1013,anna,schmidt,anna.schmidt@yahoo.com,Frankfurt,Germany,Standard,,19-01-1991
+C1014,vikram,rao,vikram.rao@hotmail.com,,India,Budget,Broker,12-12-1977
+C1015,olivia,taylor,olivia.taylor@gmail.com,Birmingham,UK,Premium,Social Media,21-03-1988
+C1016,arjun,verma,arjun.verma@outlook.com,,,Budget,,07-07-1995
+C1017,elena,garcia,elena.garcia@yahoo.com,Madrid,Spain,Luxury,Referral,29-09-1979
+C1018,michael,clark,michael.clark@sify.com,Dublin,Ireland,Premium,Online,15-05-1984
+C1019,rohan,desai,rohan.desai@gmail.com,Ahmedabad,,Budget,Website,24-02-1993
+C1020,charlotte,evans,charlotte.evans@hotmail.com,Berlin,Germany,Luxury,Broker,10-06-1976
