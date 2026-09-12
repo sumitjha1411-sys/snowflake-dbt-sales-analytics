@@ -13,7 +13,7 @@ WITH customer_revenue AS(
  
      ranked_customers AS(
      SELECT *,
-     DENSE_RANK() OVER (PARTITION BY COUNTRY ORDER BY REVENUE DESC) as rnk
+             DENSE_RANK() OVER (PARTITION BY COUNTRY ORDER BY REVENUE DESC) as rnk
      FROM customer_revenue
 )
 
