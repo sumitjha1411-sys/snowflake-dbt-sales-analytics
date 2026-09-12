@@ -1,0 +1,21 @@
+booking_id,product_name,product_category,product_sub_category,product_price,product_cost,product_status,launch_date
+B1001,premium apartment,residential,3 bhk,350000.125,260000.4567,Active,15-01-2025
+B1002,standard apartment,residential,2 bhk,220000.7834,165000.234,Active,20-02-2025
+B1003,luxury villa,residential,villa,750000.982,560000.6754,Active,10-03-2025
+B1004,budget apartment,residential,1 bhk,125000.3456,90000.128,Active,05-04-2025
+B1005,commercial office,commercial,office,450000.567,340000.3456,Active,18-04-2025
+B1006,retail shop,commercial,shop,280000.2345,210000.789,Active,25-05-2025
+B1007,luxury villa,residential,villa,850000.678,640000.1234,Active,12-06-2025
+B1008,standard apartment,residential,2 bhk,180000.4567,135000.234,Active,30-06-2025
+B1009,commercial warehouse,commercial,warehouse,620000.891,470000.5678,Active,15-07-2025
+B1010,luxury penthouse,residential,penthouse,950000.3456,710000.789,Active,01-08-2025
+B1011,commercial office,commercial,office,380000.678,285000.4567,Active,14-08-2025
+B1012,retail shop,commercial,shop,150000.234,110000.6789,Active,28-08-2025
+B1013,premium apartment,residential,4 bhk,520000.7891,390000.345,Active,10-09-2025
+B1014,luxury villa,residential,villa,1100000.456,820000.7894,Active,22-09-2025
+B1015,premium apartment,residential,3 bhk,290000.6789,215000.2345,Active,05-10-2025
+B1016,commercial office,commercial,office,550000.345,410000.5678,Inactive,18-10-2025
+B1017,budget apartment,residential,1 bhk,115000.8912,82000.345,Active,02-11-2025
+B1018,retail shop,commercial,shop,340000.567,255000.7891,Active,15-11-2025
+B1019,luxury penthouse,residential,penthouse,1250000.2345,930000.678,Active,01-12-2025
+B1020,commercial office,commercial,office,310000.789,230000.4567,Inactive,15-12-2025

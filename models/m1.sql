@@ -1,0 +1,1 @@
+select {{add_2_nos(4,5)}}  
