@@ -20,7 +20,8 @@ SELECT
     booking_month_year,
     revenue,
     previous_month_revenue,
-    ROUND((revenue - previous_month_revenue)* 100/(previous_month_revenue),2) mom_growth_percentage
+    ROUND(revenue - previous_month_revenue,2) AS revenue_change,
+    ROUND((revenue - previous_month_revenue)* 100/NULLIF(previous_month_revenue, 0),2) mom_growth_percentage
 FROM monthly_revenue_growth
 ORDER BY booking_month_year
 
