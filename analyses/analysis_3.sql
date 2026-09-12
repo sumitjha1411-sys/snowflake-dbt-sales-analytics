@@ -1,4 +1,5 @@
 -- Which customer segments generate the most revenue and profit
+
 SELECT
       customer_segment,
       ROUND(SUM(revenue),2) as Total_Revenue,
