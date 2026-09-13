@@ -1,0 +1,14 @@
+models:
+  - name: int_booking_details # model name
+    columns:
+      - name: profit # the specific column I want to test
+        tests:
+          - is_non_negative # custom generic test name and this is saved under "/macros/test_is_non_negative.sql"
+
+      - name: revenue
+        tests:
+          - is_non_negative # I can use this generic test to any model, only .yml file to update like this one
+
+      - name: discount
+        tests:
+          - is_non_negative

@@ -1,6 +1,10 @@
-{% macro calculate_new_revenue(revenue) %}
-  {{revenue}}*1.10   
+-- Examples of macros in dbt and how it works, it always starts with word - 
+-- "macro" then "macro name" and finally "endmacro"
+
+{% macro calculate_new_revenue(revenue,multiplier) %}
+  {{revenue}} * {{multiplier}}  
 {% endmacro %}
+
 
 -- Here, "calculate_new_revenue" is the macro name and "revenue" is the parameter/argument that will receive a value.
 -- When we call/invoke the macro function in the dbt model, we pass the actual column name as the argument.

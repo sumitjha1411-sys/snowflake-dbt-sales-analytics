@@ -1,10 +1,70 @@
-# Creating a source, which will be a reference to the "raw" schema tables in the data warehouse (snowflake).
+# Creating a source and tests, which will be a reference to the "raw" schema tables in the data warehouse (snowflake).
+# to run this use command: dbt test --source:stg_source
 
 sources:
   - name: stg_source
-    database: dbt_tutorial  
-    schema: raw  
+    database: dbt_tutorial
+    schema: raw
     tables:
-      - name: customer
-      - name: product
+
+      - name: customer     # table name
+        columns:
+          - name: customer_id  
+            tests:
+              - unique
+              - not_null
+
+          - name: customer_segment
+            tests:
+              - accepted_values:
+                  arguments:
+                    values: ['Premium', 'Standard', 'Luxury', 'Budget']
+
       - name: bookings
+        columns:
+          - name: booking_order_id
+            tests:
+              - unique
+              - not_null
+
+          - name: customer_id
+            tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('stg_source', 'customer')
+                    field: customer_id
+
+          - name: booking_id
+            tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('stg_source', 'product')
+                    field: booking_id
+
+          - name: selling_price
+            tests:
+              - not_null
+
+          - name: cancelled
+            tests:
+              - not_null
+              - accepted_values:
+                  arguments:
+                    values: [0, 1]
+
+      - name: product
+        columns:
+          - name: booking_id
+            tests:
+              - unique
+              - not_null
+
+          - name: product_price
+            tests:
+              - not_null
+
+          - name: product_cost
+            tests:
+              - not_null
