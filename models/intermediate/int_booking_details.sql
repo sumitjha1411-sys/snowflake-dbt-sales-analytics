@@ -6,9 +6,9 @@
 
 
 SELECT
+    b.booking_id,
     b.customer_id,
     b.property_id,
-    b.booking_id,
     b.property_booking_date,
     TO_CHAR(b.property_booking_date, 'MM-YYYY') AS booking_month_year,
     b.property_selling_price as revenue,

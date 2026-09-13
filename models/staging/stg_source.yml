@@ -1,4 +1,5 @@
 # Creating a source and tests, which will be a reference to the "raw" schema tables in the data warehouse (snowflake).
+# to run this use command: dbt test --source:stg_source
 
 sources:
   - name: stg_source
