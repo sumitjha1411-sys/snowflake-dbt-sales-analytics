@@ -7,7 +7,7 @@ models:
 
       - name: revenue
         tests:
-          - is_non_negative
+          - is_non_negative # I can use this generic test to any model, only .yml file to update like this one
 
       - name: discount
         tests:
