@@ -1,0 +1,20 @@
+-- steps to connect Snowflake with dbt
+
+
+create database if not exists dbt_tutorial;
+
+create schema if not exists dbt_tutorial.raw;
+
+create warehouse if not exists dbt_xs_wh;
+
+grant all privileges on database dbt_tutorial to role accountadmin;
+
+use database dbt_tutorial;
+
+show schemas;
+
+
+
+
+
+
