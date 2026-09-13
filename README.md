@@ -2,11 +2,11 @@
 
 An end-to-end analytics engineering project built to practice dbt fundamentals and modern data transformation workflows, using Snowflake as the data warehouse.
 
-The project takes raw customer, product, and booking/sales data and transforms it through a layered pipeline into a clean, tested, dimensional model ready for reporting.
+The project takes raw customer, product, and booking/sales data and transforms it through a structured pipeline into a clean, tested, dimensional model ready for reporting.
 
 ## Tech stack
 
-dbt cloud(trial version) | Snowflake(trial version) | SQL | GitHub
+dbt cloud | Snowflake | SQL | GitHub
 
 ## What this project demonstrates
 
@@ -19,7 +19,7 @@ dbt cloud(trial version) | Snowflake(trial version) | SQL | GitHub
 
 ## Project structure
 
-models:
+**models**:
 
       staging/  # cleaned views of raw source data
       
@@ -27,15 +27,15 @@ models:
       
       marts/          # fact and dimension tables for reporting
 
-seeds:                   sample CSV data (customers, bookings, products)
+**seeds**:                   sample CSV data (customers, bookings, products)
 
-macros:                 reusable Jinja macros and custom generic tests
+**macros**:                 reusable Jinja macros and custom generic tests
 
-tests:                   singular tests
+**tests**:                   singular tests
 
-analyses:               ad-hoc revenue and profit analysis queries
+**analyses**:               ad-hoc revenue and profit analysis queries
 
-scratch:                exploratory/setup files, not part of the production pipeline
+**scratch**:                exploratory/setup files, not part of the production pipeline
 
 
 ## Data flow
@@ -47,10 +47,81 @@ Raw seeds → Snowflake (raw schema)
 
 ## Key technical details
 
-**Incremental strategy:** fact_bookings model uses `materialized='incremental' with unique_key='booking_id'` and `incremental_strategy='merge'`
+**Incremental strategy:**  fact_bookings model uses `materialized='incremental'`, `unique_key='booking_id'`, and `incremental_strategy='merge'`
 
 **Testing approach:** data quality is enforced at the source layer (catching upstream issues early) and at the model layer (catching transformation bugs), including a custom `is_non_negative` generic test applied across multiple financial columns.
 
 ## Note
 
 This is a personal learning project using sample seed data, built to develop hands-on analytics engineering skills alongside ongoing data analysis/BI work.
+
+## data_flow_reference (ref: Snowflake)
+
+-- Step 1: steps to connect Snowflake with dbt : connection details
+
+
+create database if not exists dbt_tutorial;
+
+
+create schema if not exists dbt_tutorial.raw;
+
+
+create warehouse if not exists dbt_xs_wh;
+
+
+grant all privileges on database dbt_tutorial to role accountadmin;
+
+
+use database dbt_tutorial;
+
+
+show schemas;
+
+-- Step 2: Read CSV files : dbt SEEDS ---> RAW SCHEMA
+
+
+SELECT * FROM dbt_tutorial.raw.customer;
+
+SELECT * FROM dbt_tutorial.raw.product;
+
+SELECT * FROM dbt_tutorial.raw.bookings;
+
+
+-- Step 3: RAW SCHEMA --> BASIC DATA TRANSFORMATION in dbt ---> STAGING SCHEMA
+
+
+SELECT * FROM dbt_tutorial.staging.stg_customer;
+
+SELECT * FROM dbt_tutorial.staging.stg_product;
+
+SELECT * FROM dbt_tutorial.staging.stg_bookings;
+
+
+-- Step 4: STAGING SCHEMA --> DATA TRANSFORMATION in dbt ---> INTERMEDIATE SCHEMA
+
+
+SELECT * FROM dbt_tutorial.intermediate.int_booking_details;
+
+
+-- Step 5: INTERMEDIATE SCHEMA  --> DATA TRANSFORMATION in dbt ---> MARTS SCHEMA (BUSINESS READY DATA FOR ANALYSIS)
+
+
+SELECT * FROM dbt_tutorial.marts.dim_customers;
+
+SELECT * FROM dbt_tutorial.marts.dim_properties;
+
+SELECT * FROM dbt_tutorial.marts.fact_bookings;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
