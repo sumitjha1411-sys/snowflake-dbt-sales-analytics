@@ -27,7 +27,7 @@ dbt cloud | Snowflake | SQL | GitHub
       
       marts/          # fact and dimension tables for reporting
 
-**seeds**:                   sample CSV data (customers, bookings, products)
+**seeds**:                   sample CSV data (customers, bookings, property_type)
 
 **macros**:                 reusable Jinja macros and custom generic tests
 
@@ -82,7 +82,7 @@ show schemas;
 
 SELECT * FROM dbt_tutorial.raw.customer;
 
-SELECT * FROM dbt_tutorial.raw.product;
+SELECT * FROM dbt_tutorial.raw.property_type;
 
 SELECT * FROM dbt_tutorial.raw.bookings;
 
@@ -92,7 +92,7 @@ SELECT * FROM dbt_tutorial.raw.bookings;
 
 SELECT * FROM dbt_tutorial.staging.stg_customer;
 
-SELECT * FROM dbt_tutorial.staging.stg_product;
+SELECT * FROM dbt_tutorial.staging.stg_property_type;
 
 SELECT * FROM dbt_tutorial.staging.stg_bookings;
 
