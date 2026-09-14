@@ -2,7 +2,7 @@
 
 An end-to-end analytics engineering project built to practice dbt fundamentals and modern data transformation workflows, using Snowflake as the data warehouse.
 
-The project takes raw customer, product, and booking/sales data and transforms it through a structured pipeline into a clean, tested, dimensional model ready for reporting.
+The project takes raw - customer, property_type, and booking/sales data and transforms it through a structured pipeline into a clean, tested, dimensional model ready for reporting.
 
 ## Tech stack
 
