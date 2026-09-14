@@ -1,1 +1,1 @@
-SELECT * FROM {{ ref('stg_product') }}
+SELECT * FROM {{ ref('stg_property_type') }}
