@@ -40,5 +40,5 @@ FROM {{ ref('stg_bookings') }} b
 LEFT JOIN {{ ref('stg_customer') }} c
     ON b.customer_id = c.customer_id
 
-LEFT JOIN {{ ref('stg_product') }} p
+LEFT JOIN {{ ref('stg_property_type') }} p
     ON b.property_id = p.property_id

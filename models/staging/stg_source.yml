@@ -1,5 +1,5 @@
 # Creating a source and tests, which will be a reference to the "raw" schema tables in the data warehouse (snowflake).
-# to run this use command: dbt test --source:stg_source
+# to run this use command: dbt test --select source:stg_source (source_name), total 16 tests
 
 sources:
   - name: stg_source
@@ -40,7 +40,7 @@ sources:
               - not_null
               - relationships:
                   arguments:
-                    to: source('stg_source', 'product')
+                    to: source('stg_source', 'property_type')
                     field: booking_id
 
           - name: selling_price
@@ -54,7 +54,7 @@ sources:
                   arguments:
                     values: [0, 1]
 
-      - name: product
+      - name: property_type
         columns:
           - name: booking_id
             tests:
