@@ -14,6 +14,7 @@ dbt cloud | Snowflake | SQL | GitHub
 - **Dimensional modeling** — a fact/dimension design (fact_bookings, dim_customers, dim_properties) for analysis and reporting
 - **Data testing** — source tests, built-in generic tests (unique, not_null, accepted_values, relationships), a custom reusable generic test, and a dbt_utils composite-key uniqueness check
 - **Incremental models** — merge-based incremental loading on the fact table, including resolving a real data-freshness filtering bug during development
+- **Snapshots** — tracking slowly changing dimension (customer segments) (SCD Type 2) using dbt snapshots
 - **Reusable macros** — custom Jinja macros for schema naming and business logic (e.g., revenue categorization)
 - **Version control workflow** — feature branches and pull requests via GitHub
 
