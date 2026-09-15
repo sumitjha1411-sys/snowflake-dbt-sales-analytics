@@ -27,11 +27,13 @@ dbt cloud | Snowflake | SQL | GitHub
       
       marts/          # fact and dimension tables for reporting
 
-**seeds**:                   sample CSV data (customers, bookings, property_type)
+**seeds**:                  sample CSV data (customers, bookings, property_type)
+
+**snapshots**:              slowly changing dimension tracking (e.g., customer segment history over time)
 
 **macros**:                 reusable Jinja macros and custom generic tests
 
-**tests**:                   singular tests
+**tests**:                  singular tests
 
 **analyses**:               ad-hoc revenue and profit analysis queries
 
