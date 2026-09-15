@@ -2,7 +2,7 @@
 
 An end-to-end analytics engineering project built to practice dbt fundamentals and modern data transformation workflows, using Snowflake as the data warehouse.
 
-The project takes raw - customer, property_type, and booking/sales data and transforms it through a structured pipeline into a clean, tested, dimensional model ready for reporting.
+The project takes raw - customer, property_type, and booking/sales data and transforms it through a layered pipeline into a clean, tested, dimensional model ready for reporting.
 
 ## Tech stack
 
@@ -10,7 +10,7 @@ dbt cloud | Snowflake | SQL | GitHub
 
 ## What this project demonstrates
 
-- **Structured transformation architecture** — staging, intermediate, and marts, following dbt's recommended project structure
+- **layered transformation architecture** — staging, intermediate, and marts, following dbt's recommended project structure
 - **Dimensional modeling** — a fact/dimension design (fact_bookings, dim_customers, dim_properties) for analysis and reporting
 - **Data testing** — source tests, built-in generic tests (unique, not_null, accepted_values, relationships), a custom reusable generic test, and a dbt_utils composite-key uniqueness check
 - **Incremental models** — merge-based incremental loading on the fact table, including resolving a real data-freshness filtering bug during development
