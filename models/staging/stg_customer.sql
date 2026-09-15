@@ -10,7 +10,11 @@ SELECT
       TRIM(customer_segment) AS customer_segment,
       COALESCE(channel,'Unknown') AS channel,
       TO_DATE(dob, 'dd-MM-yyyy') AS date_of_birth,
-      DATEDIFF(YEAR,TO_DATE(dob, 'DD-MM-YYYY'),CURRENT_DATE()) AS age
-      
-FROM {{ source('stg_source', 'customer') }}
+      DATEDIFF(YEAR,TO_DATE(dob, 'DD-MM-YYYY'),CURRENT_DATE()) AS age,
+      dbt_scd_id,
+      dbt_updated_at,
+      dbt_valid_from,
+      dbt_valid_to
+FROM {{ ref('customers_segment_snapshot') }}
+WHERE dbt_valid_to IS NULL
 
