@@ -58,9 +58,9 @@ Raw seeds → Snowflake (raw schema)
 
 This is a personal learning project using sample seed data, built to develop hands-on analytics engineering skills alongside ongoing data analysis/BI work.
 
-## data_flow_reference (ref: Snowflake)
+## Data Flow (ref: Snowflake)
 
--- Step 1: steps to connect Snowflake with dbt : connection details
+## Step 1: steps to connect Snowflake with dbt : connection details
 
 
 create database if not exists dbt_tutorial;
@@ -80,7 +80,7 @@ use database dbt_tutorial;
 
 show schemas;
 
--- Step 2: Read CSV files : dbt SEEDS ---> RAW SCHEMA
+## Step 2: Read CSV files : dbt SEEDS ---> RAW SCHEMA
 
 
 SELECT * FROM dbt_tutorial.raw.customer;
@@ -90,7 +90,7 @@ SELECT * FROM dbt_tutorial.raw.property_type;
 SELECT * FROM dbt_tutorial.raw.bookings;
 
 
--- Step 3: RAW SCHEMA --> BASIC DATA TRANSFORMATION in dbt ---> STAGING SCHEMA
+## Step 3: RAW SCHEMA --> BASIC DATA TRANSFORMATION in dbt ---> STAGING SCHEMA
 
 
 SELECT * FROM dbt_tutorial.staging.stg_customer;
@@ -100,13 +100,13 @@ SELECT * FROM dbt_tutorial.staging.stg_property_type;
 SELECT * FROM dbt_tutorial.staging.stg_bookings;
 
 
--- Step 4: STAGING SCHEMA --> DATA TRANSFORMATION in dbt ---> INTERMEDIATE SCHEMA
+## Step 4: STAGING SCHEMA --> DATA TRANSFORMATION in dbt ---> INTERMEDIATE SCHEMA
 
 
 SELECT * FROM dbt_tutorial.intermediate.int_booking_details;
 
 
--- Step 5: INTERMEDIATE SCHEMA  --> DATA TRANSFORMATION in dbt ---> MARTS SCHEMA (BUSINESS READY DATA FOR ANALYSIS)
+## Step 5: INTERMEDIATE SCHEMA  --> DATA TRANSFORMATION in dbt ---> MARTS SCHEMA (BUSINESS READY DATA FOR ANALYSIS)
 
 
 SELECT * FROM dbt_tutorial.marts.dim_customers;
