@@ -68,3 +68,4 @@ sources:
           - name: product_cost
             tests:
               - not_null
+
