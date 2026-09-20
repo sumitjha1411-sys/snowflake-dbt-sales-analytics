@@ -20,7 +20,7 @@ sources:
                   arguments:
                     values: ['Premium', 'Standard', 'Luxury', 'Budget']
 
-      - name: bookings
+      - name: bookings           # table name
         columns:
           - name: booking_order_id
             tests:
@@ -54,7 +54,7 @@ sources:
                   arguments:
                     values: [0, 1]
 
-      - name: property_type
+      - name: property_type       # table name
         columns:
           - name: booking_id
             tests:

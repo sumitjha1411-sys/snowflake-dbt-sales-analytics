@@ -1,6 +1,6 @@
 
--- example of singular test
--- command to run this: dbt test --select is_non_negative (name = filename)
+-- example of **** singular test ****
+-- command to run this: dbt test --select is_non_negative (name = filename.sql)
 -- path to save singular test (always): tests/
 -- No .yml file required
 

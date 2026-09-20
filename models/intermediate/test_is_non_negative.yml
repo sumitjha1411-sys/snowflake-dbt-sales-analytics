@@ -1,6 +1,6 @@
 models:
   - name: int_booking_details # model name
-    tests:                                        # ← model-level tests (not under columns:)
+    tests:                                        # ← model-level tests (not under columns)
       - dbt_utils.unique_combination_of_columns:  # This is the test name, written as package_name.test_name
           arguments:
             combination_of_columns:
@@ -11,8 +11,8 @@ models:
     columns:
       - name: revenue   # the specific column I want to test
         tests:
-          - is_non_negative # custom generic test name and this is saved under "/macros/test_is_non_negative.sql"
+          - is_non_negative    # custom generic test name and this is saved under "/macros/test_is_non_negative.sql"
 
       - name: discount
         tests:
-          - is_non_negative  # I can use this generic test to any model, only .yml file to update like this one
+          - is_non_negative   # I can use this custom generic test to any model, only .yml file to update like - this one

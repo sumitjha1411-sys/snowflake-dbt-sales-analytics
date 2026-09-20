@@ -7,5 +7,6 @@
         check_cols=['customer_segment']
     )
 }}
+
 SELECT * FROM {{ source('stg_source', 'customer') }}
 {% endsnapshot %}
