@@ -1,5 +1,6 @@
-# Creating a source and tests, which will be a reference to the "raw" schema tables in the data warehouse (snowflake).
-# to run this use command: dbt test --select source:stg_source (source_name), total 16 tests
+# Create a source and its tests, referencing the raw schema tables in the Snowflake data warehouse.
+# Run the tests using: dbt test --select source:stg_source
+# Total: 18 tests
 
 sources:
   - name: stg_source
@@ -64,8 +65,16 @@ sources:
           - name: product_price
             tests:
               - not_null
+              - dbt_utils.accepted_range:
+                  arguments:
+                    min_value: 0
+                    inclusive: false
 
           - name: product_cost
             tests:
               - not_null
+              - dbt_utils.accepted_range:
+                  arguments:
+                    min_value: 0
+                    inclusive: false
 
